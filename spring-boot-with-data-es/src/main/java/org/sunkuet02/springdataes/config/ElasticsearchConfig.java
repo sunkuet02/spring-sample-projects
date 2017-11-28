@@ -17,7 +17,7 @@ import java.net.InetAddress;
 
 @Configuration
 @PropertySource(value = "classpath:applications.properties")
-@EnableElasticsearchRepositories(basePackages = "org.springdataes.dao")
+@EnableElasticsearchRepositories(basePackages = "org.sunkuet02.springdataes.dao")
 public class ElasticsearchConfig {
     @Value("${elasticsearch.host}")
     private String EsHost;
