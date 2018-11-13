@@ -1,4 +1,12 @@
 package com.sunkuet02.springbootvalidation.dto.response;
 
-public class ServiceResponse {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class ServiceResponse<T> {
+    Metadata meta;
+
+    T data;
 }
