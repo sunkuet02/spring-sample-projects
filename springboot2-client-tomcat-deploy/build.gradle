@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id 'java'
+    id 'maven'
+    id 'war'
+}
+apply plugin: 'io.spring.dependency-management'
+
+group 'com.sunkuet02.springboot2.client.tomcatdeploy'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation "org.springframework.session:spring-session-data-redis"
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    compileOnly 'org.springframework.boot:spring-boot-starter-tomcat'
+
+    implementation 'org.springframework.security:spring-security-jwt:1.0.10.RELEASE'
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+
+
+    providedCompile "org.apache.tomcat.embed:tomcat-embed-jasper:9.0.19"
+    implementation group: 'jstl', name: 'jstl', version: '1.2'
+
+    implementation "org.projectlombok:lombok:1.16.18"
+    annotationProcessor "org.projectlombok:lombok:1.16.18"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}
